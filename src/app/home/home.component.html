@@ -1,9 +1,18 @@
 <div id="cssmenu">
 	<ul>
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">First Topic</a></li>
-		<li><a href="#">Second Topic</a></li>
-		<li><a href="#">Third Topic</a></li>
-		<li><a href="#">Fourth Topic</a></li>
+		<li class="active"><a [routerLink]="['/first-topic']">Home</a></li>
+		<li><a [routerLink]="['/first-topic']">First Topic</a></li>
+		<li><a [routerLink]="['/second-topic']">Second Topic</a></li>
+		<li><a [routerLink]="['/third-topic']">Third Topic</a></li>
+		<li><a [routerLink]="['/fourth-topic']">Fourth Topic</a></li>
 	</ul>
+</div>
+
+<div>
+	<div style="padding: 200;">
+		<h1>
+			Welcome home !
+		</h1>
+
+	</div>
 </div>
