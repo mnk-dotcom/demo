@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FirstTopicComponent } from './first-topic/first-topic.component';
 import { SecondTopicComponent } from './second-topic/second-topic.component';
 import { ThirdTopicComponent } from './third-topic/third-topic.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ThirdTopicComponent } from './third-topic/third-topic.component';
     HomeComponent,
     FirstTopicComponent,
     SecondTopicComponent,
-    ThirdTopicComponent
+    ThirdTopicComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,
