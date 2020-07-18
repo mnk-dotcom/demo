@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
 	selector: 'app-login',
@@ -12,14 +14,14 @@ export class LoginComponent implements OnInit {
 	public notAuthenticated: boolean = true;
 
 
-	constructor(private router: Router) { }
+	constructor(private router: Router, private authService: AuthServiceService) { }
 
 	ngOnInit(): void {
 	}
 
 	login() {
-		if (this.username === 'admin' && this.password === 'admin') {
-			this.router.navigateByUrl('/home');
+		if (this.authService.login(this.username, this.password)) {
+			this.router.navigate(['/home']);
 			this.notAuthenticated = !this.notAuthenticated;
 		}
 	}

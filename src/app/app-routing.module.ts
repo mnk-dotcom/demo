@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { FirstTopicComponent } from './first-topic/first-topic.component';
 import { SecondTopicComponent } from './second-topic/second-topic.component';
 import { ThirdTopicComponent } from './third-topic/third-topic.component';
+import { AuthGuardService } from "../app/auth-guard.service";
 
 const routes: Routes = [
 	{
@@ -12,20 +13,29 @@ const routes: Routes = [
 		component: LoginComponent
 	},
 	{
+		path: '',
+		component: HomeComponent,
+		canActivate: [AuthGuardService]
+	},
+	{
 		path: 'home',
-		component: HomeComponent
+		component: HomeComponent,
+		canActivate: [AuthGuardService]
 	},
 	{
 		path: 'first-topic',
-		component: FirstTopicComponent
+		component: FirstTopicComponent,
+		canActivate: [AuthGuardService]
 	},
 	{
 		path: 'second-topic',
-		component: SecondTopicComponent
+		component: SecondTopicComponent,
+		canActivate: [AuthGuardService]
 	},
 	{
 		path: 'third-topic',
-		component: ThirdTopicComponent
+		component: ThirdTopicComponent,
+		canActivate: [AuthGuardService]
 	},
 ];
 
