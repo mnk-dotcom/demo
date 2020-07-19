@@ -9,10 +9,15 @@ import { SharedService } from 'src/app/shared.service';
 export class TopMenuComponent implements OnInit {
 	@Input()
 	public page: string;
+	public collapse: boolean = false;
 	constructor(public shared: SharedService) { }
 
 	ngOnInit(): void {
 		
+	}
+
+	logout() {
+		localStorage.removeItem('auth-token');
 	}
 
 }

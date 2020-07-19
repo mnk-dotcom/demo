@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class AuthServiceService {
 	public url: string = environment.url;
 	public user: IUser;
-	constructor(private shared: SharedService, private http: HttpClient, private router: Router) { }
+	constructor(private http: HttpClient, private router: Router) { }
 	// ...
 	public isAuthenticated(): boolean {
 		return localStorage.getItem('auth-token') === "20nasser!mustafa!khalid20";
@@ -20,9 +20,7 @@ export class AuthServiceService {
 	public login(username, password) {
 		this.http.post(`${this.url}/login`, { login: username, password }).subscribe(
 			result => {
-				this.shared.isAuthenticated = true;
-				this.shared.token = "20nasser!mustafa!khalid20";
-				localStorage.setItem('auth-token', this.shared.token);
+				localStorage.setItem('auth-token', "20nasser!mustafa!khalid20");
 				this.router.navigate(['/home']);
 			},
 			error => {
@@ -34,9 +32,7 @@ export class AuthServiceService {
 	public register(userData: any) {
 		this.http.post(`${this.url}/register`, userData).subscribe(
 			result => {
-				this.shared.isAuthenticated = true;
-				this.shared.token = "20nasser!mustafa!khalid20";
-				localStorage.setItem('auth-token', this.shared.token);
+				localStorage.setItem('auth-token', "20nasser!mustafa!khalid20");
 				this.router.navigate(['/auth/login']);
 			},
 			error => {
