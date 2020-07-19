@@ -14,7 +14,7 @@ export class AuthServiceService {
 	constructor(private shared: SharedService, private http: HttpClient, private router: Router) { }
 	// ...
 	public isAuthenticated(): boolean {
-		return this.shared.token === "20nasser!mustafa!khalid20";
+		return localStorage.getItem('auth-token') === "20nasser!mustafa!khalid20";
 	}
 
 	public login(username, password) {
@@ -22,6 +22,7 @@ export class AuthServiceService {
 			result => {
 				this.shared.isAuthenticated = true;
 				this.shared.token = "20nasser!mustafa!khalid20";
+				localStorage.setItem('auth-token', this.shared.token);
 				this.router.navigate(['/home']);
 			},
 			error => {
@@ -35,6 +36,7 @@ export class AuthServiceService {
 			result => {
 				this.shared.isAuthenticated = true;
 				this.shared.token = "20nasser!mustafa!khalid20";
+				localStorage.setItem('auth-token', this.shared.token);
 				this.router.navigate(['/auth/login']);
 			},
 			error => {
