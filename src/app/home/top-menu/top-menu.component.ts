@@ -9,9 +9,7 @@ import { SharedService } from 'src/app/shared.service';
 export class TopMenuComponent implements OnInit {
 	@Input()
 	public page: string;
-	@Input()
-	public isAuthenticated: string;
-	constructor(private shared: SharedService) { }
+	constructor(public shared: SharedService) { }
 
 	ngOnInit(): void {
 		
