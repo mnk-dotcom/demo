@@ -4,28 +4,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { FirstTopicComponent } from './first-topic/first-topic.component';
-import { SecondTopicComponent } from './second-topic/second-topic.component';
-import { ThirdTopicComponent } from './third-topic/third-topic.component';
-import { TopMenuComponent } from './top-menu/top-menu.component';
+
+import { AuthModule } from "./auth/auth.module";
+import { HomeModule } from "./home/home.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    FirstTopicComponent,
-    SecondTopicComponent,
-    ThirdTopicComponent,
-    TopMenuComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
 	AppRoutingModule,
 	FormsModule,
 	ReactiveFormsModule,
+	AuthModule,
+	HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
 	selector: 'app-top-menu',
@@ -8,10 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TopMenuComponent implements OnInit {
 	@Input()
 	public page: string;
-	constructor() { }
+	@Input()
+	public isAuthenticated: string;
+	constructor(private shared: SharedService) { }
 
 	ngOnInit(): void {
-		console.log(this.page);
+		
 	}
 
 }

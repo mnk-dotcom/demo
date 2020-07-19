@@ -1,0 +1,9 @@
+<div id="cssmenu">
+	<ul>
+		<li [class.active]="page === 'home'"><a [routerLink]="['/home']">Home</a></li>
+		<li [class.active]="page === 'first-topic'"><a >First Topic</a></li>
+		<li [class.active]="page === 'second-topic'"><a >Second Topic</a></li>
+		<li [class.active]="page === 'third-topic'"><a >Third Topic</a></li>
+		<li *ngIf="isAuthenticated === 'true'"><a [routerLink]="['/auth/login']">Logout</a></li>
+	</ul>
+</div>
