@@ -21,6 +21,7 @@ export class TopMenuComponent implements OnInit {
 
 	logout() {
 		localStorage.removeItem('auth-token');
+		localStorage.removeItem('current-user');
 	}
 
 }
