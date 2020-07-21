@@ -5,5 +5,5 @@ import { AuthServiceService } from './auth/auth-service.service';
 	providedIn: 'root'
 })
 export class SharedService {
-	constructor(public auth: AuthServiceService) { }
+	constructor(public auth: AuthServiceService) {}
 }
