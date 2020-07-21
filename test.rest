@@ -2,6 +2,6 @@ POST  http://localhost:8080/api/users/login
 content-type: application/json
 
 {
-    "login":"admin", 
-    "password":"admin"
+    "login":"user", 
+    "password":"user"
 }

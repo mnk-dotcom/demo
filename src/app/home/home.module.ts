@@ -25,9 +25,6 @@ const routes: Routes = [
 	FormsModule,
 	ReactiveFormsModule
   ],
-  exports: [
-	  TopMenuComponent
-  ],
   providers: [AuthGuardService]
 })
 export class HomeModule { }
