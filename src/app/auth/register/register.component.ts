@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
 	}
 
 	register(): void {
+		delete this.formData.passwordConfirmation;
+		console.log(this.formData);
 		this.auth.register(this.formData)
 			.subscribe(
 				(result: IUser) => {
