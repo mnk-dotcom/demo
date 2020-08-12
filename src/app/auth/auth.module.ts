@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthComponent } from './auth.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterCompleteComponent } from './register-complete/register-complete.component';
 
 const routes: Routes = [
 	{
@@ -14,13 +15,14 @@ const routes: Routes = [
 		component: AuthComponent,
 		children: [
 			{ path: 'login', component: LoginComponent },
-			{ path: 'register', component: RegisterComponent }
+			{ path: 'register', component: RegisterComponent },
+			{ path: 'register-success', component: RegisterCompleteComponent }
 		]
 	}
 ];
 
 @NgModule({
-	declarations: [LoginComponent, RegisterComponent, AuthComponent],
+	declarations: [LoginComponent, RegisterComponent, AuthComponent, RegisterCompleteComponent],
 	imports: [
 		RouterModule.forChild(routes),
 		CommonModule,

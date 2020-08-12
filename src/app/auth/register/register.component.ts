@@ -22,11 +22,15 @@ export class RegisterComponent implements OnInit {
 		console.log(this.formData);
 		this.auth.register(this.formData)
 			.subscribe(
-				(result: IUser) => {
-					this.auth.user = result;
-					localStorage.setItem('auth-token', this.auth.user.token);
-					localStorage.setItem('current-user', JSON.stringify(this.auth.user));
-					this.router.navigate(['/home']);
+				(result: any) => {
+					// this.auth.user = result;
+					// localStorage.setItem('auth-token', this.auth.user.token);
+					// localStorage.setItem('current-user', JSON.stringify(this.auth.user));
+					this.router.navigate(['/register-success'], {
+						queryParams: {
+							message: `user ${this.formData.nom} ${this.formData.prenom} has been added successfully !`
+						}
+					});
 				},
 				error => {
 					alert('Oups something went wrong');
