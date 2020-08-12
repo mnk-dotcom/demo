@@ -5,7 +5,7 @@
 <div class="container">
 			<form #registerForm="ngForm">
 				<div class="form-group">
-					<label for="username">Username</label>
+					<label for="username">Name</label>
 					<input type="text" class="form-control" [(ngModel)]="formData.username" name="username"
 						#username="ngModel" required>
 				</div>
@@ -14,15 +14,14 @@
 						Username is required
 					</div>
 				</div>
-
 				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" [(ngModel)]="formData.email" name="email" #email="ngModel"
-						required>
+					<label for="Prenom">Prénom</label>
+					<input type="text" class="form-control" [(ngModel)]="formData.prenom" name="Prenom"
+						#Prenom="ngModel" required>
 				</div>
-				<div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-					<div *ngIf="email.errors.required">
-						Email is required
+				<div *ngIf="Prenom.invalid && (Prenom.dirty || Prenom.touched)" class="alert alert-danger">
+					<div *ngIf="Prenom.errors.required">
+						Prenom is required
 					</div>
 				</div>
 
@@ -34,6 +33,16 @@
 				<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
 					<div *ngIf="password.errors.required">
 						Password is required
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="telephone">Téléphone</label>
+					<input type="text" class="form-control" [(ngModel)]="formData.telephone" #telephone="ngModel"
+						name="telephone" required>
+				</div>
+				<div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
+					<div *ngIf="telephone.errors.required">
+						telephone is required
 					</div>
 				</div>
 

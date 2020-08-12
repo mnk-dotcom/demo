@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 				this.router.navigate(['/home']);
 			},
 			error => {
-				alert('Oups something went wrong');
+				alert('Oups something went wrong');	
 			});
 	}
 
